@@ -8,6 +8,7 @@ type Validator interface {
 }
 
 // NullInt64 - nullable int64
+//
 //easyjson:skip
 type NullInt64 struct {
 	Int64 int64
@@ -31,6 +32,7 @@ func (n NullInt64) Addr() *int64 {
 }
 
 // NullInt32 - nullable int32
+//
 //easyjson:skip
 type NullInt32 struct {
 	Int32 int32
@@ -54,6 +56,7 @@ func (n NullInt32) Addr() *int32 {
 }
 
 // NullInt16 - nullable int16
+//
 //easyjson:skip
 type NullInt16 struct {
 	Int16 int16
@@ -77,6 +80,7 @@ func (n NullInt16) Addr() *int16 {
 }
 
 // NullInt8 - nullable int8
+//
 //easyjson:skip
 type NullInt8 struct {
 	Int8  int8
@@ -100,6 +104,7 @@ func (n NullInt8) Addr() *int8 {
 }
 
 // NullInt - nullable int
+//
 //easyjson:skip
 type NullInt struct {
 	Int   int
@@ -123,6 +128,7 @@ func (n NullInt) Addr() *int {
 }
 
 // NullTime - nullable time.Time
+//
 //easyjson:skip
 type NullTime struct {
 	Time  time.Time
@@ -146,6 +152,7 @@ func (n NullTime) Addr() *time.Time {
 }
 
 // NullString - nullable string
+//
 //easyjson:skip
 type NullString struct {
 	String string
@@ -169,10 +176,12 @@ func (n NullString) Addr() *string {
 }
 
 // NullBool - nullable bool
+//
 //easyjson:skip
 type NullBool struct {
-	Bool  bool
-	Valid bool // Valid is true if Bool is not NULL
+	Bool   bool
+	Valid  bool // Valid is true if Bool is not NULL
+	IsNull bool // true if it's explicitly null
 }
 
 func (n NullBool) IsValid() bool {
@@ -192,6 +201,7 @@ func (n NullBool) Addr() *bool {
 }
 
 // NullFloat64 - nullable float64
+//
 //easyjson:skip
 type NullFloat64 struct {
 	Float64 float64
@@ -215,6 +225,7 @@ func (n NullFloat64) Addr() *float64 {
 }
 
 // NullFloat32 - nullable float32
+//
 //easyjson:skip
 type NullFloat32 struct {
 	Float32 float32
@@ -238,6 +249,7 @@ func (n NullFloat32) Addr() *float32 {
 }
 
 // NullUint64 - nullable uint64
+//
 //easyjson:skip
 type NullUint64 struct {
 	Uint64 uint64
@@ -261,6 +273,7 @@ func (n NullUint64) Addr() *uint64 {
 }
 
 // NullUint32 - nullable uint32
+//
 //easyjson:skip
 type NullUint32 struct {
 	Uint32 uint32
@@ -284,6 +297,7 @@ func (n NullUint32) Addr() *uint32 {
 }
 
 // NullUint16 - nullable uint16
+//
 //easyjson:skip
 type NullUint16 struct {
 	Uint16 uint16
@@ -307,6 +321,7 @@ func (n NullUint16) Addr() *uint16 {
 }
 
 // NullUint8 - nullable uint8
+//
 //easyjson:skip
 type NullUint8 struct {
 	Uint8 uint8
@@ -330,6 +345,7 @@ func (n NullUint8) Addr() *uint8 {
 }
 
 // NullUint - nullable uint
+//
 //easyjson:skip
 type NullUint struct {
 	Uint  uint
@@ -353,5 +369,6 @@ func (n NullUint) Addr() *uint {
 }
 
 // type needed for template for custom types generator
+//
 //easyjson:skip
 type initialTemplateType string

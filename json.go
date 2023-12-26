@@ -18,7 +18,7 @@ func (n NullBool) MarshalJSON() ([]byte, error) {
 // UnmarshalJSON - unmarshaller for json
 func (n *NullBool) UnmarshalJSON(data []byte) error {
 	if bytes.Equal(data, []byte("null")) {
-		*n = NullBool{}
+		*n = NullBool{IsNull: true}
 		return nil
 	}
 
@@ -29,7 +29,7 @@ func (n *NullBool) UnmarshalJSON(data []byte) error {
 		return err
 	}
 
-	*n = NullBool{Bool: res, Valid: true}
+	*n = NullBool{Bool: res, Valid: true, IsNull: false}
 
 	return nil
 }
